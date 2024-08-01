@@ -1,0 +1,46 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2021, // Specifies the version of ECMAScript syntax you want to use
+    "sourceType": "module" // Allows for the use of imports
+  },
+  "env": {
+    "es2021": true, // Enables ES2021 globals and syntax
+    "node": true // Enables Node.js global variables and Node.js scoping
+  },
+  "extends": [
+    "eslint:recommended", // Uses the recommended rules from eslint
+    "plugin:prettier/recommended" // Integrates Prettier with ESLint
+  ],
+  "plugins": ["prettier"], // Uses prettier plugin for enforcing prettier rules
+  "rules": {
+    // Possible Errors
+    "no-console": "off", // Allows the use of console (useful for debugging)
+
+    // Best Practices
+    "consistent-return": "error", // Ensures that return statements either always or never specify values
+
+    // Stylistic Issues
+    "quotes": ["error", "single"], // Enforces single quotes
+    "semi": ["error", "always"], // Enforces semicolons at the end of statements
+    "indent": ["error", 2], // Enforces 2 spaces for indentation
+    "no-multiple-empty-lines": ["error", { "max": 1 }], // Disallows multiple empty lines
+
+    // ES6
+    "prefer-const": "error", // Suggests using const wherever possible
+    "arrow-body-style": ["error", "as-needed"], // Prefer concise arrow function bodies
+
+    // Prettier-specific rules
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "semi": true,
+        "useTabs": false,
+        "tabWidth": 2,
+        "trailingComma": "es5",
+        "bracketSpacing": true,
+        "arrowParens": "avoid"
+      }
+    ]
+  }
+}
