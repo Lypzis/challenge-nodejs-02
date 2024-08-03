@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
   "type": "module",
   "scripts": {
@@ -11,7 +11,9 @@
     "knex": "node --import tsx ./node_modules/.bin/knex",
     "lint": "eslint src --ext .ts --fix",
     "build": "tsup src -d build",
-    "test": "vitest"
+    "test": "vitest run --isolate test/users.test.ts && vitest run --isolate test/meals.test.ts",
+    "test:users": "vitest run --isolate test/users.test.ts",
+    "test:meals": "vitest run --isolate test/meals.test.ts"
   },
   "author": "",
   "license": "ISC",

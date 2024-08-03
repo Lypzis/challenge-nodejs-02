@@ -1,7 +1,6 @@
-import { knex as setupKnex, Knex } from 'knex';
+import knex, { type Knex } from 'knex';
 import { env } from './env';
 
-// temporary solution for possible filename undefined
 if (!process.env.DATABASE_URL) {
   throw new Error('DATABASE_URL env not found.');
 }
@@ -21,4 +20,4 @@ export const config: Knex.Config = {
   },
 };
 
-export const knex = setupKnex(config);
+export const setupKnex = knex(config);
